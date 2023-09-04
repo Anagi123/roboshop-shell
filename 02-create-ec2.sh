@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NAMES=( "mongodb" "redis" "mysql" "rabbitmq" "catalogue" "cart" "user" "shipping" "payment" "dispatch" "web" )
+NAMES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "cart" "user" "shipping" "payment" "dispatch" "web")
 INSTANCE_TYPE=""
 IMAGE_ID=ami-03265a0778a880afb
 SECURITY_GROUP_ID=sg-0b5180e3e68542b21
@@ -9,7 +9,7 @@ SECURITY_GROUP_ID=sg-0b5180e3e68542b21
 
 for i in "${NAMES[@]}"
 do
-  if [[ $i == "mongodb" || $i == "mysql" ]]
+  if [[ $i ==  "mongodb" || $i == "mysql" ]]
   then 
       INSTANCE_TYPE="t3.medium"
   else
@@ -17,5 +17,5 @@ do
   fi
     echo "creating $i instance"
     aws ec2 run-instances --image-id $IMAGE_ID  --instance-type $INSTANCE_TYPE --security-group-ids 
-  $SECURITY_GROUP_ID --tag-specifications "ResourceType=instance, Tags=[{Key=name,Value=$i}]"
+    $SECURITY_GROUP_ID --tag-specifications "ResourceType=instance, Tags=[{Key=name,Value=$i}]"
 done
