@@ -20,19 +20,19 @@ do
     echo "creating $i instance"
     IP_ADDRESS=$(aws ec2 run-instances --image-id $IMAGE_ID  --instance-type $INSTANCE_TYPE --security-group-ids $SECURITY_GROUP_ID --tag-specifications 
 
-#     aws route53 change-resource-record-sets --hosted-zone-id $HOSTED_ZONE_ID --change-batch '
-#     {
-#             "Changes": [{
-#             "Action": "CREATE",
-#                         "ResourceRecordSet": {
-#                             "Name": "'$i.$DOMAIN_NAME'",
-#                             "Type": "A",
-#                             "TTL": 300,
-#                             "ResourceRecords": [{ "Value": "'$IP_ADDRESS'"}]
-#                         }}]
-#     }
-#     '
-# done
+    aws route53 change-resource-record-sets --hosted-zone-id $HOSTED_ZONE_ID --change-batch '
+    {
+            "Changes": [{
+            "Action": "CREATE",
+                        "ResourceRecordSet": {
+                            "Name": "'$i.$DOMAIN_NAME'",
+                            "Type": "A",
+                            "TTL": 300,
+                            "ResourceRecords": [{ "Value": "'$IP_ADDRESS'"}]
+                        }}]
+    }
+    '
+done
 
 # # imporvement
 # # check instance is already created or not
