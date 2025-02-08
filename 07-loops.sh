@@ -17,8 +17,9 @@ do
     if [ $? -ne 0 ]
     then
         echo "$i is not installed,lets install it"
-        yum install $i -Y
+        yum install $i -y
     else
         echo -e "$Y $i installed $N"
+
 done            
 
