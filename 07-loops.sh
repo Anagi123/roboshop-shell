@@ -16,7 +16,7 @@ then
 fi   
 
 VALIDATE(){
-    if [$1 -ne 0]
+    if [ $1 -ne 0 ]
     then 
         echo -e "installing $2 ....$R failure $N"
         exit 1
