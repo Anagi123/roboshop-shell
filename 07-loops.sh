@@ -9,4 +9,9 @@ if [ $USERID -ne 0 ];
 then
     echo "$R ERROR::please run with root access $N"
     exit
-fi        
+fi   
+
+for i in $@
+do
+    yum install $i -y
+done    
