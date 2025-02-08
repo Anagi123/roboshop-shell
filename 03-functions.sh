@@ -6,7 +6,7 @@ LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 USERID=$(id -u)
 
 R="\e[31m"   
-G="\e[33m"       
+G="\e[32m"       
 N="\e[0m"
 
 VALIDATE(){
