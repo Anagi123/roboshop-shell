@@ -19,6 +19,6 @@ do
         echo "$i is not installed,lets install it"
         yum install $i -Y
     else
-        echo "$Y $i installed $N"
+        echo -e "$Y $i installed $N"
 done            
 
