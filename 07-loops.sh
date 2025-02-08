@@ -7,6 +7,6 @@ N="\e[0m"
 
 if [ $USERID -ne 0 ];
 then
-    echo "$RERROR::please run with root access $N"
+    echo "$R ERROR::please run with root access $N"
     exit
 fi        
