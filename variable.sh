@@ -1,9 +1,10 @@
 #!/bin/bash
 
-echo " please enter username "
+USERID = $(id -u)
 
-read -s USERNAME
+if[USERID -ne 0]
+then
+echo "ERROR: please run with root user"
+exit 1
+fi
 
-echo " please enter password "
-
-read -s PASSWORD
