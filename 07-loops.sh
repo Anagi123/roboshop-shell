@@ -14,7 +14,7 @@ fi
 for i in $@
 do
     yum installed $i 
-    if[ $? -ne 0 ]
+    if [ $? -ne 0 ]
     then
         echo "$i is not installed,lets install it"
         yum install $i -Y
