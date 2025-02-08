@@ -5,13 +5,17 @@ SCRIPT_NAME=$0
 LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 USERID=$(id -u)
 
+R="\e[31m"     
+G="\e[33m"       
+N="\e[0m"
+
 VALIDATE(){
 if [ $1 -ne 0 ]
 then
-    echo "$2 ...... Failure"
+    echo "$2 ......$R Failure $N"
     exit 1
 else
-    echo "$2 ......success"   
+    echo "$2 ......$G success $N"   
 fi    
 
 }
